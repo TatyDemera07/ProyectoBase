@@ -44,6 +44,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 
+app.get("/", (req, res)=>{
+    res.send("hola mundo")
+})
 // Configurar middleware
 app.use(fileUpload({ createParentPath: true }));
 app.use(morgan('dev'));
@@ -51,7 +54,7 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(session({
     key: 'session_cookie_name',
-    secret: 'session_cookie_secret',
+    secret: 'ASISTENCIATTIME',
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
@@ -83,8 +86,20 @@ app.use(helmet());
 
 // Configurar archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-productividad')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-recordatorio')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-notificacion')));
+//app.use(express.static(path.join(__dirname, 'public/images/img-configuracion')));
 
 // Rutas - Definir tus rutas aquí
+app.use(require('./routes'));
+//app.use(require('./routes/configuraions.routes'));
+//app.use(require('./routes/notificacions.routes'));
+//app.use(require('./routes/productividads.routes'));
+//app.use(require('./routes/recordatorios.routes'));
+//app.use(require('./routes/tareas.routes'));
+//app.use(require('./routes/users.routes'));
 
 // Exportar la aplicación
 module.exports = app;

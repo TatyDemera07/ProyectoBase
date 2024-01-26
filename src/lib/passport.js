@@ -3,8 +3,8 @@ const LocalStrategy = require('passport-local').Strategy;
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
-const orm = require('../Database/dataBase.orm');
-const sql = require('../Database/dataBase.sql');
+const orm = require('../config/dataBase.orm');
+const sql = require('../config/dataBase.sql');
 const helpers = require('./helpers');
 const { cifrarDatos } = require('./encrypDates');
 
