@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-//const tareasController = require('../controllers/tareas.controller');
-const { isLoggedIn } = require('../lib/auth');
-const photoTareasController = require('../controllers/photoTareas.controller')
+const tareasController = require('../controllers/tareas.controller');
+//const { isLoggedIn } = require('../lib/auth');
+
 
 //views tareas
-router.get('/', isLoggedIn, TareasController.getListTareas);
-router.post('/tarea', isLoggedIn, tareasController.postTareas);
-router.get('/list-tareas', isLoggedIn, tareasController.getListTareas );
-router.get('/delete-tareas/:id',isLoggedIn, tareasController.deleteTarea);
-router.get('/edit-tareas/:id',isLoggedIn, tareasController.getTarea);
-router.post('/edit-tareas/:id',isLoggedIn, tareasController.updateTarea);
-
+router.get('/',  tareasController.getListTareas);
+router.post('/tareas', tareasController.postTarea);
+router.get('/add',  tareasController.getAddTareas);
+router.get('/list-tareas', tareasController.getListTareas);
+router.get('/delete-tareas/:id', tareasController.deleteTarea);
+router.get('/edit-tareas/:id', tareasController.getTarea);
+router.post('/edit-tareas/:id', tareasController.updateTarea);
 
 module.exports = router;

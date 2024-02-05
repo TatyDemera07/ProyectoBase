@@ -44,17 +44,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 
-app.get("/", (req, res)=>{
-    res.send("hola mundo")
-})
+
+
 // Configurar middleware
 app.use(fileUpload({ createParentPath: true }));
 app.use(morgan('dev'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(session({
-    key: 'session_cookie_name',
-    secret: 'ASISTENCIATTIME',
+    key: 'asistencia',
+    secret: 'Asistencia TTime',
     store: sessionStore,
     resave: false,
     saveUninitialized: false,
@@ -94,12 +93,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas - Definir tus rutas aquí
 app.use(require('./routes'));
-//app.use(require('./routes/configuraions.routes'));
-//app.use(require('./routes/notificacions.routes'));
-//app.use(require('./routes/productividads.routes'));
-//app.use(require('./routes/recordatorios.routes'));
-//app.use(require('./routes/tareas.routes'));
-//app.use(require('./routes/users.routes'));
+//app.use('/users', require('./routes/users.routes'));
+app.use('/tareas', require('../src/routes/tareas.routes'));
+
 
 // Exportar la aplicación
 module.exports = app;

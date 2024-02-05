@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/list-comunication.css">
+<div class="col-md-12" style="margin-bottom: 5px; ">
+    <div class="card text-center border border-primary">
+        <div style="display: flex; justify-content: left; padding: 10px;">
+            <h3 class="card-title text-uppercase"
+                style="color: rgb(0, 0, 0); font-family: 'Bungee', sans-serif; margin: 0;">
+                Lista de Tareas
+            </h3>
+        </div>
+    </div>
+</div>
+<button><a href="/tarea/add" style="text-decoration: none; color: inherit;">Añadir noticia </a></button>
+
+{{#each tareas}}
+
+<div class="noticia-content">
+    <div class="noticia-title">{{titulo}}</div>
+    <p class="el-transpaso-de-no">{{fechaCreacion}} </p>
+    <p class="el-transpaso-de-no">{{FechaVencimiento}} </p>
+    <p class="el-transpaso-de-no">{{descripcion}} </p>
+    <p class="el-transpaso-de-no">{{estado}} </p>
+</div>
+<center>
+    <a href="/tareas/delete-tareas/{{id}}" style="text-decoration: none; color: inherit;"
+        class="danger">Eliminar</a>
+    <a href="/tareas/edit-tareas/{{id}}" style="text-decoration: none; color: inherit;"
+        class="secondary">Editar</a>
+</center>
+</div>
+
+{{else}}
+<center>
+    <p>No hay registro guardados a un </p>
+    <a href="/tareas/add"> Agrega uno haciendo click aqui</a>
+</center>
+{{/each}}

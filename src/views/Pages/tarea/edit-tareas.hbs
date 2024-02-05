@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/css/tarea.css">
+
+<form action="/tareas/edit-tareas/{{tarea.id}}" method="POST">
+
+    <body>
+        <div class="login-container">
+            <div class="tabs">
+                <button class="tab" onclick="openTab('tareas')">Tareas</button>
+                <button class="tab" onclick="openTab('notificaciones')">Notificaciones</button>
+                <button class="tab" onclick="openTab('recordatorio')">Recordatorio</button>
+                <button class="tab" onclick="openTab('calendario')">Calendario</button>
+                <button class="tab" onclick="openTab('configuraciones')">Configuraciones</button>
+            </div>
+            <div id="tareas" class="tab-content">
+                <!-- Contenido de la pestaña Tareas -->
+            </div>
+            <div id="notificaciones" class="tab-content">
+                <!-- Contenido de la pestaña Notificaciones -->
+            </div>
+            <div id="recordatorio" class="tab-content">
+                <!-- Contenido de la pestaña Recordatorio -->
+            </div>
+            <div id="calendario" class="tab-content">
+                <form>
+                    <label for="actividad">Nombre de la actividad:</label>
+                    <input type="text" id="actividad" value="{{tarea.titulo}}" name="titulo" required>
+
+                    <label for="tiempo">Fecha de creacion:</label>
+                    <input type="date" id="tiempo" value="{{tarea.fechaCreacion}}" name="fechaCreacion" required>
+
+                    <label for="descripcion">Fecha de vencimiento:</label>
+                    <input type="date" id="tiempo"    name="fechaVencimiento" value="{{tarea.fechaVencimiento}}"  required>
+
+                    <label for="tiempo">Descripcion:</label>
+                    <input type="text" id="tiempo"  value="{{tarea.description}}" name="descriptio" rows="4" required>
+
+                    <label for="tiempo">Estado:</label>
+                    <input type="text" id="tiempo" value="{{tarea.estado}}" name="estado" required>
+
+                    <div id="cancelButton">
+                        <input type="submit" value="Guardar" />
+                    </div>
+                </form>
+            </div>
+            <div id="configuraciones" class="tab-content">
+                <!-- Contenido de la pestaña Configuraciones -->
+            </div>
+        </div>
+
+
+</form>

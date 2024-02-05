@@ -20,13 +20,12 @@ if (MYSQL_URI) {
         }
     });
 }
-const usersModel = require('../models/users.model');
-const configuracionsModel = require('../models/configuracions.model');
-const notificacionsModel = require ('../models/notificacions.model');
-const productividadsModel = require ('../models/productividads.model');
-const recordatoriosModel = require ('../models/recordatorios.model');
-const tareasModel = require ('../models/tareas.model')
-
+const usersModel = require('../models/user.model');
+const configuracionsModel = require('../models/configuracion.model')
+const notificacionsModel = require ('../models/notificacion.model')
+const recordatoriosModel = require ('../models/recordatorio.model');
+const tareasModel = require ('../models/tarea.model')
+const productividadsModel = require('../models/productividad.model');
 // Autenticar y sincronizar
 sequelize.authenticate()
   .then(() => {
