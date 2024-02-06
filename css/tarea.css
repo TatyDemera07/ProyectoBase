@@ -1,0 +1,87 @@
+.body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .navbar .brand-and-task {
+    display: flex;
+    align-items: center;
+    right: 30%;
+  }
+ 
+  
+  .navbar .add-task {
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    flex-grow: 1;
+  }
+  .navbar .back-btn {
+    background-color: #555;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .content {
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .tabla-tareas {
+   align-items: center;
+    margin-top: 35px;
+  }
+
+
+
+  input[type="date"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .fecha-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .fecha-container div {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .botones-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .agregartarea {
+    align-items: center;
+     margin-top: 35px;
+   }
+
+  .containerBntagregar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }

@@ -42,8 +42,8 @@ Tareas.deleteTarea = async (req, res) => {
 //Actualizar Comunicado 
 Tareas.getTarea = async (req, res) => {
   const { id } = req.params;
-  const tareas = await pool.query('SELECT * FROM tareas WHERE id = ?', [id]);
-  res.render('Pages/tareas/edit-tareas', { tareas: tareas[0] });
+  const tarea = await pool.query('SELECT * FROM tareas WHERE id = ?', [id]);
+  res.render('Pages/tarea/edit-tareas', { tarea: tarea[0] });
 };
 
 //Se amostrara lo que se actualizao 
